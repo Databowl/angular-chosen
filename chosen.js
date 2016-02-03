@@ -63,7 +63,9 @@
           };
           disableWithMessage = function() {
             empty = true;
-            return element.attr('data-placeholder', chosen.results_none_found).attr('disabled', true).trigger('chosen:updated');
+            if(chosen != null) {
+              return element.attr('data-placeholder', chosen.results_none_found).attr('disabled', true).trigger('chosen:updated');
+            }
           };
           if (ngModel) {
             origRender = ngModel.$render;
